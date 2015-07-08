@@ -1,3 +1,8 @@
 <% @posts.each do |post| %>
   <p><%= post.title %></p>
 <% end %>
+
+<%= form_for @post do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "Create" %>
+<% end %>
