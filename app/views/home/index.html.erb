@@ -1,4 +1,19 @@
-<h1>indepage</h1>
+
 <% @posts.each do |post| %>
-  <p><%= post.title %></p>
+  <h2><%= post.title %> <%=post.user.name%></h2>
+  <h3>Add comment</h3>
+  <%= form_for @comment do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_field :text %>
+    <%= f.hidden_field :post_id, value: post.id %>
+    <%= f.submit "Create" %>
+  <% end %>
+  <h3>Comments</h3>
+  <% post.comments.each do |comment| %>
+    <p>
+      <p>User =<%= comment.user.name %></p>
+      <strong><%= comment.title %></strong> <%= comment.text %>
+    </p>
+  <% end %>
+
 <% end %>
