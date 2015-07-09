@@ -5,4 +5,5 @@ class Post < ActiveRecord::Base
   has_many :votes
   has_many :post_tags
   has_many :tags, through: :post_tags
+  accepts_nested_attributes_for :images, allow_destroy: true
 end

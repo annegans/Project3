@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root to: "home#index"
   resources :users 
-  resources :posts
+  resources :posts do 
+     resources :images
+  end
   resources :comments
+  
   
 
   get 'account' => 'users#account'

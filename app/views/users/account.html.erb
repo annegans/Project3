@@ -3,7 +3,14 @@
   <%= button_to "delete", post, method: :delete %>
 <% end %>
 
+
+
+
+
 <%= form_for @post do |f| %>
-  <%= f.text_field :title %>
+  <%= f.label :title, :class => 'control-label' %>
+  <%= f.text_field :title, :class => 'text_field' %>
+ 
+  <%= file_field_tag "images[]", type: :file, multiple: true %>
   <%= f.submit "Create" %>
 <% end %>

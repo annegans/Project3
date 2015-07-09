@@ -1,6 +1,6 @@
 
 <% @posts.each do |post| %>
-  <h2><%= post.title %> <%=post.user.name%></h2>
+  <h2><%= post.title %> <%#=post.user.name%></h2>
   <h3>Add comment</h3>
   <%= form_for @comment do |f| %>
     <%= f.text_field :title %>
