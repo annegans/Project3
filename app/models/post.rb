@@ -6,4 +6,8 @@ class Post < ActiveRecord::Base
   has_many :post_tags
   has_many :tags, through: :post_tags
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  def self.search(search)
+  where("title ILIKE ?", "%#{search}%") 
+  end
 end

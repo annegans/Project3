@@ -1,19 +1,70 @@
-
-<% @posts.each do |post| %>
-  <h2><%= post.title %> <%#=post.user.name%></h2>
-  <h3>Add comment</h3>
-  <%= form_for @comment do |f| %>
-    <%= f.text_field :title %>
-    <%= f.text_field :text %>
-    <%= f.hidden_field :post_id, value: post.id %>
-    <%= f.submit "Create" %>
-  <% end %>
-  <h3>Comments</h3>
-  <% post.comments.each do |comment| %>
-    <p>
-      <p>User =<%= comment.user.name %></p>
-      <strong><%= comment.title %></strong> <%= comment.text %>
-    </p>
-  <% end %>
-
+<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
 <% end %>
+
+
+
+<div class="post1">
+  <% @posts.each do |post| %>
+  <div class="post" value="<%=post.id%>" data-id="<%=post.id%>">
+    <h2>
+      <%if post.id %>
+        <%= post.id %>
+      <% end %>
+      <%= post.title %> 
+      <% if post.user %>  
+        <%= post.user.name%>
+      <% end %>
+    </h2>
+    <div id="amout-likes-js">
+      Likes: 
+      <% if post.votes.count %>
+      <p class="like-count-js"><%= post.votes.count %></p>
+      <% end %>
+    </div>
+    <button class="like-js" data-id="post.id">Like post</button>
+    <%#= button_to "create", vote, method: :create %>
+    <% if post.images.first %>  
+      <%= image_tag post.images.first.avatar%>
+    <% end %>
+    <h3>Add comment</h3>
+    <button class="new-comment-js">New comment</button>
+    <div class="comment-form">
+    <%= form_for @comment do |f| %>
+      <%= f.text_field :title %>
+      <%= f.text_field :text %>
+      <%= f.hidden_field :post_id, value: post.id %>
+      <%= f.submit "Create" %>
+    <% end %>
+    </div>
+    <h3>Comments
+      <p class="ajax-comments"></p>
+    </h3>
+
+    <% post.comments.each do |comment| %>
+      <p>
+        <p>User =<%= comment.user.name %></p>
+        <strong class="comment-title-js">
+          <%= comment.title %>
+        </strong> 
+        <%= comment.text %>
+      </p>
+    <% end %>
+  </div>
+
+  <% end %>
+
+<%# @images.each do |image| %>
+  <%#= image[:tempfile] %>
+<%# end %>
+
+
+
+</div>
+<div>///////////////////////////////////////////////////////////////////////////////////////////////////</div>
+<div class="post-title-js">
+</div>
+
+<p></p>
+

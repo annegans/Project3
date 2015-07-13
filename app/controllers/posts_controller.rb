@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
+
+
+
+
   def create 
     Post.create(title: params['post']['title'], user: current_user)
-    redirect_to account_path 
-  end
-
+    redirect_to root_path 
+  
+ #voor foto's toevoegen 
   # @post = current_user.posts.build(post_params)
   #   if @post.save
   #     # to handle multiple images upload on create
@@ -19,11 +23,16 @@ class PostsController < ApplicationController
   #     render :new
   #   end
 
-  # end
+    #ajax call voor post op de pagina 
+  end
+  def show
+    @post = Post.find params[:id]
+  end
 
   def destroy 
     Post.find(params[:id]).destroy
-    redirect_to account_path 
+    @posts = Post.all
+    render "view", :posts => @posts
   end
 
   # private

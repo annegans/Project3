@@ -1,0 +1,10 @@
+.comment-form {
+text-transform: uppercase;
+display: none;
+}
+
+.post{
+    border: 1px dotted grey;
+}
+
+
