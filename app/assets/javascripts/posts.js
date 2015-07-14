@@ -24,23 +24,7 @@
 
 // })
 
-function deletePost(){
-  console.log('hello')
-  var postId =  $(this).data('id');
-  console.log(postId);
-  debugger;
-  $.ajax({
-    method: 'delete',
-    url: '/posts/' + postId
-  }).done(function(){
-    console.log('it worked')
-  })
-}
 
-
-$(function(){
-  $('.your-posts').on('click', "#button_to", deletePost)
-})
 
 
 

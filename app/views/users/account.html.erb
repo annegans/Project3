@@ -1,9 +1,14 @@
 
   <% @posts.each do |post| %>
-  <div class="your-posts"  value="<%=post.id%>" data-id="<%=post.id%>">
-    <p><%= post.title %></p>
-    <%#= button_to "delete", post, method: :delete %>
-    <button id="delete-<%=post.id%>" data-id="<%=post.id%>">delete</button>
+    <div class="your-posts"  value="<%=post.id%>" data-id="<%=post.id%>">
+      <p><%= post.title %></p>
+      <% if post.images.first %>  
+        <div class="image-style">
+          <%= image_tag post.images.last.avatar.url%>
+        </div>
+      <% end %>
+      <button  class="delete-post" id="delete-<%=post.id%>" data-id="<%=post.id%>">delete</button> 
+   </div>
   <% end %>
 
   <%= form_for @post do |f| %>

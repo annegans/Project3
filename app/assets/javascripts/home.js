@@ -53,8 +53,10 @@ function createComment(e){
 }
 
 
-function newLike(){
+function newLike(e){
+  e.preventDefault(); 
   var postId2 = $(this).closest('.post').data('id')
+  _this = $(this)
   $.ajax({
      method: 'post',
      url: '/votes',
@@ -66,7 +68,8 @@ function newLike(){
     //data is the count
     // updateView(data);
     console.log(data)
-    $('.like-count-js').html(data);
+
+    _this.prev().find('.like-count-js').html(data);
 
   })
 }
@@ -74,16 +77,32 @@ function newLike(){
 function updateView(count){
   console.log(count)
   $('.like-count-js').html(count);
+}
 
+function deletePost(e){
+  e.preventDefault()
+  var postId =  $(this).data('id');
+  console.log(postId);
+  //Storing a reference to the delete button because the context of this changes
+  _post = $(this);
+  $.ajax({
+    dataType: 'json',
+    method: 'delete',
+    url: '/posts/' + postId
+  }).done(function(data){
+    //Remove the post from the page;
+    _post.closest('.your-posts').remove()
+  })
 }
 
 
 $(function(){
-  // populatePage()
+  console.log('ddsa')
   $('.new-comment-js').on('click', commentForm);
   $('.fa-search').on('click', searchForm)
   $('.post').on('submit', '.new_comment', createComment)
-  $('.like-js').on('click', newLike)
+  $('.like-js').on('click', newLike);
+  $('body').on('click', '.delete-post', deletePost)
 })
 
 ///going home when click on logo

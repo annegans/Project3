@@ -1,5 +1,10 @@
 
 <div class="box100">
+  <form class="form-control">
+  Search filter:<br>
+  <input type="text" name="seach">
+  <br>
+  <div class="post-template">
   <div class="box post1">
     <% @posts.each do |post| %>
     <div class="post" value="<%=post.id%>" data-id="<%=post.id%>">
@@ -60,6 +65,7 @@
     <%#= image[:tempfile] %>
   <%# end %>
 
+  </div>
   </div>
 </div>
 

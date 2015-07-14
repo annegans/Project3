@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
 
   def create 
-    Post.create(title: params['post']['title'], user: current_user)
-    redirect_to root_path 
+    post = Post.create(title: params['post']['title'], user: current_user)
+    redirect_to  new_post_image_path(post.id)
   
  #voor foto's toevoegen 
   # @post = current_user.posts.build(post_params)
@@ -26,13 +26,16 @@ class PostsController < ApplicationController
   def show
     @post = Post.find params[:id]
     # @post = Post.where(post_id: )
-    @images = Image.where(post_id: params[:id])
+    # @images = Image.where(post_id: params[:id])
   end
 
   def destroy 
-    Post.find(params[:id]).destroy
-    @posts = Post.all
-    render "view", :posts => @posts
+    @post = Post.find(params[:id]).destroy
+    
+    respond_to do |format|
+      format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   # private

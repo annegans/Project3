@@ -24,11 +24,3 @@ function appendContent(imageUrl, imageId, post_id){
 }
 
 
-
-
-
-
-
-// var appendContent = function(imageUrl, mediaId) {
-
-// };
