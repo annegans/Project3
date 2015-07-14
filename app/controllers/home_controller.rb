@@ -1,7 +1,9 @@
 class HomeController <ApplicationController
   def index
    
-    @posts = Post.all
+    @posts = Post.all.order(title: :desc)
+  
+
     @comment = Comment.new
     @images = Image.all
     @votes = Vote.all 

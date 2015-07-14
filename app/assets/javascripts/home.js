@@ -1,30 +1,11 @@
-
-// function populatePage(){
-//   console.log('populate')
-//   $.ajax({
-//     type: 'get',
-//     url: '/',
-//     data: {  
-//       format: 'json',
-//     }
-//   }).done(function(data){
-//    console.log(data)
-//    $(data).each(function(index, item){
-//     var post = item.posts
-//       $(post).each(function(index,item){
-//           $('.post-title-js').append("<p>" + item.title + "</p>");
-//           $('.post-title-js').append("<button class='.add-comment-js'>Add comment</button>" )
-//      })
-//    }) 
-//   })
-// }
-
+//search form
 function searchForm(){
  $('.search-form').css({
    'display': 'block'
  })
 }
 
+//coment form 
 function commentForm(){
  var form = $(this).parent().find('.comment-form');
  form.css({
@@ -32,9 +13,9 @@ function commentForm(){
   })
 }
 
+//create comment
 function createComment(e){
   e.preventDefault(); 
-
   title = $('#comment_title', $(this)).val();
   text = $('#comment_text', $(this)).val();
   var postId =  $(this).closest('.post').data('id')
@@ -47,12 +28,11 @@ function createComment(e){
       comment:{title: title, text: text, post_id: postId}
     }
    }).done(function(data){
-    console.log(data, 'comment')
-   $('[data-id=' + data.post_id + ']').find('.ajax-comments').append('<p>' + title + '</p>' )
+    $('[data-id=' + data.post_id + ']').find('.ajax-comments').append('<p>' + title + '</p>' )
    })
 }
 
-
+//create new like
 function newLike(e){
   e.preventDefault(); 
   var postId2 = $(this).closest('.post').data('id')
@@ -65,20 +45,18 @@ function newLike(e){
      vote:{post_id: postId2}
     }
   }).done(function(data){
-    //data is the count
-    // updateView(data);
-    console.log(data)
-
-    _this.prev().find('.like-count-js').html(data);
-
+    // _this.prev().find('.like-count-js').html(data);
+    _this.prev().prev().prev().find('.like-count-js').html(data);
   })
 }
 
-function updateView(count){
-  console.log(count)
-  $('.like-count-js').html(count);
-}
 
+// function updateView(count){
+//   console.log(count)
+//   $('.like-count-js').html(count);
+// }
+
+//delete post
 function deletePost(e){
   e.preventDefault()
   var postId =  $(this).data('id');
@@ -96,6 +74,7 @@ function deletePost(e){
 }
 
 
+//eventlisteners
 $(function(){
   console.log('ddsa')
   $('.new-comment-js').on('click', commentForm);
@@ -105,8 +84,6 @@ $(function(){
   $('body').on('click', '.delete-post', deletePost)
 })
 
-///going home when click on logo
-// $('.logo').on('click', window.location.href ="/")
 
 
 
