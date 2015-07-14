@@ -1,4 +1,4 @@
-
+console.log('posts.js');
 // function getPosts(){
 //     $.ajax({
 //     type: 'get',

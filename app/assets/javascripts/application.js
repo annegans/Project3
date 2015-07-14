@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require dropzone
 //= require filter
 //= require_tree .
+
+console.log('application.js')
+$(document).ready(function(){
+  console.log('document ready being fired');
+})
