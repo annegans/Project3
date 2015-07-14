@@ -1,10 +1,35 @@
+
 .comment-form {
 text-transform: uppercase;
 display: none;
 }
 
 .post{
-    border: 1px dotted grey;
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin-left: 1%;
+    margin-bottom: 1%;
+
 }
 
 
+
+.title:after {
+  margin-top: -15%;
+  background-color: #333;
+  content: "";
+  display: inline-block;
+  height: 3px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+
+
+
+
+.title.line-on-right:after {
+  width: 100%;
+}

@@ -1,0 +1,67 @@
+.nav-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  height: 83px;
+  background: #FCC877;
+}
+
+.container{
+  width: 85%;
+  margin: 0 auto;
+  height:83px;
+}
+
+.bar {
+  display: inline-block;
+  height:83px;
+  vertical-align: top;
+  width: 25%
+
+}
+
+.nav-right{
+ 
+
+}
+.nav-center{
+  
+
+}
+.nav-left{
+ 
+}
+
+
+.logo{
+  color: white;
+  font-size: 52px;
+  font-family: helvetica;
+  /* margin-left: 16%; */
+  margin-top: 4%;
+ 
+
+}
+.search-form{
+  
+}
+
+
+a {
+  color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  text-decoration: none;
+
+}
+
+.space-nav{
+  height:120px;
+}
+
+.search-form{
+text-transform: uppercase;
+display: none;
+}
+

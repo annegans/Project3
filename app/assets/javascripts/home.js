@@ -19,6 +19,12 @@
 //   })
 // }
 
+function searchForm(){
+ $('.search-form').css({
+   'display': 'block'
+ })
+}
+
 function commentForm(){
  var form = $(this).parent().find('.comment-form');
  form.css({
@@ -88,9 +94,13 @@ function updateView(count){
 $(function(){
   // populatePage()
   $('.new-comment-js').on('click', commentForm);
+  $('.fa-search').on('click', searchForm)
   $('.post').on('submit', '.new_comment', createComment)
   $('.like-js').on('click', newLike)
 })
+
+///going home when click on logo
+// $('.logo').on('click', window.location.href ="/")
 
 
 

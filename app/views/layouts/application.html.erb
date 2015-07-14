@@ -5,20 +5,61 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-<div id="user_nav">
-   <% if current_user %>
-     Logged in as <%= current_user.email %>.
-     <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-     <%= link_to "my posts", account_path %>
-   <% else %>
-     <%= link_to "Sign up", new_user_registration_path %> or
-     <%= link_to "log in", new_user_session_path %>
-   <% end %>
- </div>
+<div class="nav-bar">
+  <div class="container">
+    <!-- nav-right -->
+    <div class="bar nav-right">
+      <div class="logo">LIVIN IT</div>
+    </div>
+    <!-- nav-center -->
+    <div class="bar nav-center">
+      <div id="user_nav">
+       <% if current_user %>
+         <%#= current_user.name %>
+         <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+         <%= link_to "My posts", account_path %>
+       <% else %>
+         <%= link_to "Sign up", new_user_registration_path %> or
+         <%= link_to "log in", new_user_session_path %>
+       <% end %>
+         <ul class="nav">
+         <li><%= link_to "Explore", account_path %></li>
+         </ul>
+      </div>
+    </div>
+    <!-- nav-left -->
+    <div class="bar nav-left">
+    <!--  <i class="fa fa-sign-out"></i>
+    <i class="fa fa-sign-in"></i> -->
+    <!-- <i class="fa fa-user"></i> -->
+    <i class="fa fa-facebook-square"></i>
+    <i class="fa fa-instagram"></i>
+    <i class="fa fa-pinterest-p"></i>
+      <div class="search-form-complete">
+        <i class="fa fa-search"></i>
+        <div class="search-form">  
+        <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+        <%= submit_tag "Search" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="nav">
+      <nav class="main-nav"></nav>
+      <nav class="logo-nav"></nav>
+    </div>
+  </div>
+</div>
+<div class="space-nav"></div>
+
+
 
 <%= yield %>
 
 </body>
 </html>
+<nav></nav>
