@@ -1,0 +1,8 @@
+<div><%= @images.first %></div>
+
+<%= @post.title %>
+<%= @post.created_at %>
+ 
+<% @images.each do |image| %>
+  <div class="image-show-page"><%= image_tag image.avatar.url%></div>
+<% end %>

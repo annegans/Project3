@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
 
-
-
-
   def create 
     Post.create(title: params['post']['title'], user: current_user)
     redirect_to root_path 
@@ -25,8 +22,11 @@ class PostsController < ApplicationController
 
     #ajax call voor post op de pagina 
   end
+
   def show
     @post = Post.find params[:id]
+    # @post = Post.where(post_id: )
+    @images = Image.where(post_id: params[:id])
   end
 
   def destroy 

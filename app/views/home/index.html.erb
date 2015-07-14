@@ -1,6 +1,4 @@
 
-
-
 <div class="box100">
   <div class="box post1">
     <% @posts.each do |post| %>
@@ -25,8 +23,11 @@
       </div>
       <button class="like-js" data-id="post.id">Like post</button>
       <%#= button_to "create", vote, method: :create %>
+      <div><%= link_to "view post", post_path(post.id) %></div>
       <% if post.images.first %>  
-        <%= image_tag post.images.first.avatar%>
+        <div class="image-style">
+          <%= image_tag post.images.last.avatar.url%>
+        </div>
       <% end %>
       <h3>Add comment</h3>
       <button class="new-comment-js">New comment</button>

@@ -25,6 +25,7 @@
 // })
 
 function deletePost(){
+  console.log('hello')
   var postId =  $(this).data('id');
   console.log(postId);
   debugger;

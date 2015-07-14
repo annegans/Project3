@@ -77,19 +77,6 @@ function updateView(count){
 
 }
 
-// function likesShow(){
-//   console.log('hello')
-//   $.ajax({
-//     method: 'get',
-//     url: '/',
-//     dataType: 'json',
-//     data: {
-
-//     }
-//   }).done(function(data){
-    
-//   })
-// }
 
 $(function(){
   // populatePage()

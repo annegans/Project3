@@ -33,3 +33,7 @@ display: none;
 .title.line-on-right:after {
   width: 100%;
 }
+
+.image-style img {
+  width:200px;
+}

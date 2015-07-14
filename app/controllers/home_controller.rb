@@ -1,5 +1,6 @@
 class HomeController <ApplicationController
   def index
+   
     @posts = Post.all
     @comment = Comment.new
     @images = Image.all
@@ -12,14 +13,6 @@ class HomeController <ApplicationController
       @posts = Post.search(params[:search]).order("created_at DESC")
     else
       @posts = Post.all.order('created_at DESC')
-    end
-  # ajax request populate page
-    respond_to do |format|
-      format.html 
-      format.json { render json: { posts: @posts, user: users, votes: @votes}
-      }
-    end
+    end  
   end
-
- 
 end
