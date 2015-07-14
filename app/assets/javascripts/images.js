@@ -1,3 +1,4 @@
+console.log('images.js');
 $(function() {
   console.log('hello')
   var mediaDropzone;

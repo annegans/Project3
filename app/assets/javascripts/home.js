@@ -1,4 +1,4 @@
-
+console.log('home.js');
 // function populatePage(){
 //   console.log('populate')
 //   $.ajax({
