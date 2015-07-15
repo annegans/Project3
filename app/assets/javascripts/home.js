@@ -109,6 +109,11 @@ $(function(){
   $('.like-js').on('click', newLike);
   $('body').on('click', '.delete-post', deletePost)
 
+  //order
+  $('.order').on('click', function(){
+    $.ajax("/home/sort_by")
+  })
+
 
   // Dropdown toggle
 $('.dropdown-toggle').click(function(){

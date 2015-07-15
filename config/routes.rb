@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   resources :users 
   resources :posts do 
      resources :images
-     # get :sort_by, :collection
+     # get :sort_by, on: :collection
   end
   resources :comments
   resources :votes
+  resources :home do
+    get :sort_by, on: :collection
+  end
   
   
 

@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   scope :votes, -> { order("votes_count desc")}
    
 
-  def self.sort_by(sort_param)
+  def self.sorting(sort_param)
   if %w(recent title votes oldest).include? sort_param
     send sort_param
   else

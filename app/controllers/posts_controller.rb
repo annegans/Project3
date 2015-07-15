@@ -22,6 +22,12 @@ class PostsController < ApplicationController
     end
   end
 
+  # def sort_by
+  #   sort = Post.order("votes_count desc")
+  #   binding.pry
+  #   render json: sort
+  # end
+
   # private
   # def post_params
   #   params.require(:post).permit(:title, :user_id, images: [:avatar])
