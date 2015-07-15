@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users 
   resources :posts do 
      resources :images
+     # get :sort_by, :collection
   end
   resources :comments
   resources :votes

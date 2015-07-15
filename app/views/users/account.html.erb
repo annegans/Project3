@@ -1,22 +1,34 @@
-
-  <% @posts.each do |post| %>
-    <div class="your-posts"  value="<%=post.id%>" data-id="<%=post.id%>">
-      <p><%= post.title %></p>
-      <% if post.images.first %>  
+<div class="box100">
+  <div class="box box1">
+    <% @posts.each do |post| %>
+      <div class="post your-posts"  value="<%=post.id%>" data-id="<%=post.id%>">
+        <div class="post-bar">
+          <div class="title-box">
+            <p class="title-post"><%= post.title %></p>
+          </div>
+          <div class="likes"id="amout-likes-js"> 
+            <% if post.votes.count %>
+             <div class="like-count-js"><%= post.votes.count %></div>
+            <% end %>
+          </div>
+        </div>
+        <h2 class="title line-on-right"></h2>
+        <% if post.images.first %>  
         <div class="image-style">
           <%= image_tag post.images.last.avatar.url%>
         </div>
+        <% end %>
+        <button  class="delete-post" id="delete-<%=post.id%>" data-id="<%=post.id%>">delete</button>
+        <button class="like-js like-button" data-id="post.id">LIKE</button>
+        
+      </div> 
+    <% end %> 
+    </div>
+      <%= form_for @post do |f| %>
+        <%= f.label :title, :class => 'control-label' %>
+        <%= f.text_field :title, :class => 'text_field' %>
+        <%= f.submit "Create" %>
       <% end %>
-      <button  class="delete-post" id="delete-<%=post.id%>" data-id="<%=post.id%>">delete</button> 
-   </div>
-  <% end %>
-
-  <%= form_for @post do |f| %>
-    <%= f.label :title, :class => 'control-label' %>
-    <%= f.text_field :title, :class => 'text_field' %>
-   
-    <%= f.submit "Create" %>
-   
-  <% end %>
-
+ 
+</div>
 

@@ -5,6 +5,7 @@
   Search filter:<br>
   <input type="text" name="seach">
   <br>
+
   <div class="post-template">
   <div class="box post1">
     <% @posts.each do |post| %>
@@ -33,6 +34,7 @@
         <% if post.user %>  
           <p><%= post.user.name%></p>
         <% end %>
+
         <h3>Add comment</h3>
         <button class="new-comment-js">New comment</button>
         <div class="comment-form">
@@ -43,25 +45,13 @@
           <%= f.submit "Create" %>
         <% end %>
         </div>
-        <h3>Comments
-          <p class="ajax-comments"></p>
-        </h3>
-        <!-- comments -->
-        <% post.comments.each do |comment| %>
-          <p>
-            <p>User =<%= comment.user.name %></p>
-            <strong class="comment-title-js">
-              <%= comment.title %>
-            </strong> 
-            <%= comment.text %>
-          </p>
-        <% end %>
+    
       </div>
-    <% end %>
+    <%end %>
 
   <%# @images.each do |image| %>
     <%#= image[:tempfile] %>
-  <%# end %>
+  <%#end %>
 
   </div>
   </div>

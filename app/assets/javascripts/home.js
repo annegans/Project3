@@ -13,24 +13,45 @@ function commentForm(){
   })
 }
 
-//create comment
+// create comment homepage 
+// function createComment(e){
+//   e.preventDefault(); 
+//   title = $('#comment_title', $(this)).val();
+//   text = $('#comment_text', $(this)).val();
+//   var postId =  $(this).closest('.post').data('id')
+//   console.log('createComment');
+//    $.ajax({
+//     method: 'post',
+//     url: '/comments',
+//     dataType: 'json',
+//     data: {
+//       comment:{title: title, text: text, post_id: postId}
+//     }
+//    }).done(function(data){
+//     $('[data-id=' + data.post_id + ']').find('.ajax-comments').append('<p>' + title + '</p>' )
+//    })
+// }
+
 function createComment(e){
   e.preventDefault(); 
   title = $('#comment_title', $(this)).val();
   text = $('#comment_text', $(this)).val();
-  var postId =  $(this).closest('.post').data('id')
+  var urlSplit = window.location.pathname.split('/')
+  var id = Number(urlSplit[2])
+
   console.log('createComment');
    $.ajax({
     method: 'post',
     url: '/comments',
     dataType: 'json',
     data: {
-      comment:{title: title, text: text, post_id: postId}
+      comment:{title: title, text: text, post_id: id}
     }
    }).done(function(data){
     $('[data-id=' + data.post_id + ']').find('.ajax-comments').append('<p>' + title + '</p>' )
    })
 }
+
 
 //create new like
 function newLike(e){
@@ -84,6 +105,7 @@ $(function(){
   $('.new-comment-js').on('click', commentForm);
   $('.fa-search').on('click', searchForm)
   $('.post').on('submit', '.new_comment', createComment)
+
   $('.like-js').on('click', newLike);
   $('body').on('click', '.delete-post', deletePost)
 
