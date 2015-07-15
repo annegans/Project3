@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+ 
   def create 
     post = Post.create(title: params['post']['title'], user: current_user)
     redirect_to  new_post_image_path(post.id)

@@ -1,8 +1,8 @@
 class HomeController <ApplicationController
   def index
    
-    @posts = Post.all.order(title: :desc)
-  
+    # @posts = Post.all
+    # @posts = Post.sort_by(params[:order]).paginate(page: params[:page], per_page: 20)
 
     @comment = Comment.new
     @images = Image.all
@@ -10,11 +10,13 @@ class HomeController <ApplicationController
     @vote = Vote.new
     users = User.all
 
-  # search box
+ 
     if params[:search]
       @posts = Post.search(params[:search]).order("created_at DESC")
+    # if else 
+    #   @posts = Post.sort_by(Post.votes.count: :DESC)
     else
-      @posts = Post.all.order('created_at DESC')
+      @posts = Post.sort_by(params[:order]).paginate(page: params[:page], per_page: 20)
     end  
   end
 end

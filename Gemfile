@@ -26,6 +26,7 @@ gem 'thin'
 gem 'devise'
 gem 'carrierwave'
 gem 'dropzonejs-rails'
+gem 'will_paginate', '~> 3.0.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

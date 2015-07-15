@@ -8,6 +8,8 @@ class VotesController < ApplicationController
       format.html
       format.json { render :json => @votes.count }
     end
+    # vote = Vote.last
+    # vote.post.votes_count ++ 1
   end
 
 end
