@@ -32,7 +32,13 @@
          <%= link_to "log in", new_user_session_path %></li>
        <% end %>
          
-         <li><%= link_to "Explore", account_path %></li>
+         <a class="dropdown-toggle" href="#" title="explore">Menu</a>
+          <ul class="dropdown">
+          <li><%= link_to "oldest", root_path(order: :oldest) %>
+          <li> <%= link_to "title", root_path(order: :title) %></a></li>
+          <li><%= link_to "recent", root_path(order: :recent) %></li>
+          <li><%= link_to "votes", root_path(order: :votes) %></li></li>
+        </ul>
          </ul>
       </div>
     </div>

@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   scope :title,    -> { order(title: :desc) }
   scope :oldest, -> { order(created_at: :asc) }
   scope :votes, -> { order("votes_count desc")}
-   # scope :recent, -> { order("posts.updated_at DESC") 
+   
 
   def self.sort_by(sort_param)
   if %w(recent title votes oldest).include? sort_param

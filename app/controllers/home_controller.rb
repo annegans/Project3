@@ -13,8 +13,6 @@ class HomeController <ApplicationController
  
     if params[:search]
       @posts = Post.search(params[:search]).order("created_at DESC")
-    # if else 
-    #   @posts = Post.sort_by(Post.votes.count: :DESC)
     else
       @posts = Post.sort_by(params[:order]).paginate(page: params[:page], per_page: 20)
     end  

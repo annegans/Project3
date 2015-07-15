@@ -1,0 +1,38 @@
+
+/* Setting things up */
+
+
+a {
+  text-decoration: none;
+ 
+}
+
+
+nav {
+  position: relative;
+}
+
+.dropdown-toggle {
+  // padding: .5em 1em;
+  background: #0D0C0C;
+  // border-radius: .2em .2em 0 0;
+}
+
+ul.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  margin-top: .5em;
+  background: #0D0C0C;
+  min-width: 12em;
+  padding: 0;
+  // border-radius: 0 0 .2em .2em;
+}
+ul.dropdown li {
+  list-style-type: none;
+}
+ul.dropdown li a {
+  text-decoration: none;
+  padding: .5em 1em;
+  display: block;
+}

@@ -42,11 +42,15 @@ function newLike(e){
      url: '/votes',
      dataType: 'json',
      data: {
-     vote:{post_id: postId2}
+      vote:{post_id: postId2}
     }
   }).done(function(data){
+    console.log(data)
     // _this.prev().find('.like-count-js').html(data);
     _this.prev().prev().prev().find('.like-count-js').html(data);
+  })
+  .fail(function(err) {
+    console.log(err)
   })
 }
 
@@ -82,7 +86,22 @@ $(function(){
   $('.post').on('submit', '.new_comment', createComment)
   $('.like-js').on('click', newLike);
   $('body').on('click', '.delete-post', deletePost)
+
+
+  // Dropdown toggle
+$('.dropdown-toggle').click(function(){
+  $(this).next('.dropdown').toggle();
+});
+
+$(document).click(function(e) {
+  var target = e.target;
+  if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
+    $('.dropdown').hide();
+  }
+});
 })
+
+
 
 
 

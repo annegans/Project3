@@ -59,11 +59,6 @@
       </div>
     <% end %>
 
-<div id="link-my-post"><%= link_to "oldest", root_path(order: :oldest) %>
-  <%= link_to "title", root_path(order: :title) %>
-  <%= link_to "recent", root_path(order: :recent) %>
-  <%= link_to "votes", root_path(order: :votes) %>
-</div>
   <%# @images.each do |image| %>
     <%#= image[:tempfile] %>
   <%# end %>
@@ -71,6 +66,4 @@
   </div>
   </div>
 </div>
-
-
 
