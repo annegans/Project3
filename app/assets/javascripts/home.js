@@ -38,7 +38,6 @@ function createComment(e){
   text = $('#comment_text', $(this)).val();
   var urlSplit = window.location.pathname.split('/')
   var id = Number(urlSplit[2])
-
   console.log('createComment');
    $.ajax({
     method: 'post',
@@ -48,7 +47,8 @@ function createComment(e){
       comment:{title: title, text: text, post_id: id}
     }
    }).done(function(data){
-    $('[data-id=' + data.post_id + ']').find('.ajax-comments').append('<p>' + title + '</p>' )
+    $('[data-id=' + data.post_id + ']').append('<p>' + title + '</p>' )
+  
    })
 }
 
@@ -102,9 +102,11 @@ function deletePost(e){
 //eventlisteners
 $(function(){
   console.log('ddsa')
-  $('.new-comment-js').on('click', commentForm);
+  // $('.new-comment-js').on('click', commentForm);
   $('.fa-search').on('click', searchForm)
-  $('.post').on('submit', '.new_comment', createComment)
+  // $('.post').on('submit', '.new_comment', createComment)
+  $('.new_comment').on('submit', createComment)
+
 
   $('.like-js').on('click', newLike);
   $('body').on('click', '.delete-post', deletePost)
@@ -150,12 +152,3 @@ function getRandomClass()
 
 
 })
-
-
-
-
-
-
-
-
-

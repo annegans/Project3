@@ -14,7 +14,7 @@
           <div class="title-box">
             <p class="title-post"><%= link_to " #{post.title}", post_path(post.id), :class =>  "title-post" %></p>
           </div>
-          <div class="user-box"><class="user-post"p>By <%= post.user.name%></p></div>
+          <div class="user-box"><class="user-post"p>By <%= post.user.name%> @ <%= post.user.country %></p></div>
           <div class="likes"id="amout-likes-js"> 
             <% if post.votes.count %> 
              <div class="like-count-js"><%= post.votes.count %></div>

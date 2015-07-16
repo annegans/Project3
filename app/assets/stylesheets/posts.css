@@ -1,7 +1,19 @@
+
+.show-container-left{
+  width:50%;
+  display: inline-block;
+}
+
+.show-container-right {
+  display: inline-block;
+  width: 20%;
+  margin-left: 20%;
+  vertical-align: top;
+}
 .like-show{
   display: inline-block;
   font-size: 30px;
-  margin-left: 33%;
+  margin-left: 10%;
 }
 
 .title-show{
@@ -16,7 +28,8 @@
   height: 8px;
   background-color: black;
   border: none;
-  width: 56%;
+  width: 111%;
+  margin-left: 69px;
 }
 
 
@@ -25,3 +38,11 @@
     margin-left: 15%;
 }
 
+.show-container-right{
+
+}
+
+#comments-scroll{
+  overflow: scroll;
+  height: 500px;
+}

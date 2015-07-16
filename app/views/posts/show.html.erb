@@ -1,46 +1,49 @@
 
 
 <div class="box box100">
-  <div class="above-line-show">
-    <div class="title-show">
-      <%= @post.title %>
-    </div> 
-    <div class="like-show">
-      <%=@post.votes_count %>
-    </div>
-    </div> 
-  </div>
-  <hr class="line-show">
-  <div class="show-container">
-<% @post.images.each do |image| %>
- <div class="post" value="<%=image.post.id%>" data-id="<%=image.post.id%>">
-    <div class="image-show-page" ><%= image_tag image.avatar.url%></div>
-      <% end %>
-    <h3>Add comment</h3>
-    <button class="new-comment-js">New comment</button>
-    <div class="comment-form">
-      <%= form_for @comment do |f| %>
-        <%= f.text_field :title %>
-        <%= f.text_field :text %>
-        <%#= f.hidden_field :post_id, value: image.post.id %>
-        <%= f.submit "Create" %>
-      <% end %>
-    </div>
-    </div>
-    <h3>Comments
-      <p class="ajax-comments"></p>
-    </h3>
-    <!-- comments -->
-    <% @post.comments.each do |comment| %>
-      <p>
-        <p>User =<%= comment.user.name %></p>
-        <strong class="comment-title-js">
-          <%= comment.title %>
-        </strong> 
-        <%= comment.text %>
-      </p>
-    <% end %>
-    </div>
-<%= @post.created_at %>
+      <div class="above-line-show">
+        <div class="title-show">
+          <%= @post.title %>
+        </div> 
+        <div class="like-show">
+          <%=@post.votes_count %>
+        </div>
+      </div> 
+      <hr class="line-show">
+      <div class="box70 box">
+        <% @post.images.each do |image| %>
+         <div class="post" value="<%=image.post.id%>" data-id="<%=image.post.id%>">
+           <div class="image-show-page" ><%= image_tag image.avatar.url%></div>
+           
+            <%= @post.created_at %>
+        </div>
 
+  </div>
+        <div class="box box30">
+            <h3>Add comment</h3>
+              <button class="new-comment-js" >New comment</button>
+              <div class="comment-form" value="<%=image.post.id%>" data-id="<%=image.post.id%>">
+            <% end %>
+               <%= form_for @comment do |f| %>
+                 <%= f.text_field :title %>
+                 <%= f.text_field :text %>
+                 <%#= f.hidden_field :post_id, value: image.post.id %>
+                 <%= f.submit "Create" %>
+               <% end %>
+              </div>
+      <div id="comments-scroll">
+        <h3>Comments<p class="ajax-comments"></p></h3>
+        <!-- comments -->
+        <% @post.comments.each do |comment| %>
+          <p>
+            <p>User =<%= comment.user.name %></p>
+            <%= comment.created_at %>
+            <strong id="comment-title-js">
+              <%= comment.title %>
+            </strong> 
+            <%= comment.text %>
+          </p>
+        <% end %>
+      </div><!--End post class-->
+    </div>
 </div>

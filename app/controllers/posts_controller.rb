@@ -22,12 +22,14 @@ class PostsController < ApplicationController
     end
   end
 
+#function not working sort_by ajax
   # def sort_by
   #   sort = Post.order("votes_count desc")
   #   binding.pry
   #   render json: sort
   # end
 
+#can remove 
   # private
   # def post_params
   #   params.require(:post).permit(:title, :user_id, images: [:avatar])
