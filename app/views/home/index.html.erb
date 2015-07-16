@@ -15,22 +15,17 @@
             <p class="title-post"><%= link_to " #{post.title}", post_path(post.id), :class =>  "title-post" %></p>
           </div>
           <div class="user-box"><class="user-post"p>By <%= post.user.name%> @ <%= post.user.country %></p></div>
-          <div class="likes"id="amout-likes-js"> 
-            <% if post.votes.count %> 
-             <div class="like-count-js"><%= post.votes.count %></div>
-            <% end %>
-          </div>
-          <!-- <button class="like-js like-button" data-id="post.id">LIKE</button> -->
-            <!-- post title -->
         </div>
-        <h2 class="title line-on-right"></h2>
-        <%#= button_to "create", vote, method: :create %>
         <% if post.images.first %>  
         <div class="image-style">
             <%= image_tag post.images.last.avatar.url%>
         </div>
         <% end %>
-        
+        <div class="likes"id="amout-likes-js"> 
+            <% if post.votes.count %> 
+             <div class="like-count-js"><%= post.votes.count %></div>
+            <% end %>
+          </div>
         <button class="like-js like-button" data-id="post.id">LIKE</button>
         <div id="link-my-post"><%= link_to "POST COMMENT", post_path(post.id) %></div>
         <div id="link-my-post"><%= link_to "COMMENTS", post_path(post.id) %></div>

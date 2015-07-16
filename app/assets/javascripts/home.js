@@ -68,7 +68,7 @@ function newLike(e){
   }).done(function(data){
     console.log(data)
     // _this.prev().find('.like-count-js').html(data);
-    _this.prev().prev().prev().find('.like-count-js').html(data);
+    _this.prev().find('.like-count-js').html(data);
   })
   .fail(function(err) {
     console.log(err)
