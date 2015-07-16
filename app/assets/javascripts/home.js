@@ -48,7 +48,7 @@ function createComment(e){
     }
    }).done(function(data){
     // $('[data-id=' + data.post_id + ']').append('<p>' + title + '</p>' )
-  $('[data-id=' + data.post_id + ']').parent().next().next().find('h3').find('.ajax-comments').append('<p>' + title + '</p>' )
+   $('[data-id=' + data.post_id + ']').parent().next().find("#comments-scroll").find('h3').find('.ajax-comments').append('<p>' + title + '</p>' )
    })
 }
 

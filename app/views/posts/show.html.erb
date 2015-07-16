@@ -10,11 +10,11 @@
           <%=@post.votes_count %>
         </div>
         <div class="show-created-at"> 
-          <%= @post.created_at %>
+          <%=  (Time.now - @post.created_at.to_time)/1.hour.to_i.round(1) %>
         </div>
       </div> 
 
-      <div class="box50 box">
+      <div class="box50 box box50-show">
         <% @post.images.each do |image| %>
          <div class="post" value="<%=image.post.id%>" data-id="<%=image.post.id%>">
            <div class="image-show-page" ><%= image_tag image.avatar.url%></div>  
@@ -25,23 +25,22 @@
         <% end %>
       </div>
 
-      <div class="box box30">
-        <h3>Add comment</h3>
-        <button class="new-comment-js" >New comment</button>
+      <div class="box box30 comment-box">
+        <div class="title-post-box">COMMENTS</div>
+        <!-- <button class="new-comment-js" >New comment</button> -->
          <%= form_for @comment do |f| %>
-           <%= f.text_field :title %>
-           <%= f.text_field :text %>
+           <%= f.text_field :title , class: "commit-comment"%>
+           <%#= f.text_field :text %>
            <%#= f.hidden_field :post_id, value: image.post.id %>
-           <%= f.submit "Create" %>
+           <%= f.submit "Create" ,class: "create-comment" %>
          <% end %>
-      </div>
       <div id="comments-scroll">
-        <h3>Comments<p class="ajax-comments"></p></h3>
+        <h3><p class="ajax-comments"></p></h3>
         <!-- comments -->
         <% @post.comments.each do |comment| %>
           <p>
-            <p>User =<%= comment.user.name %></p>
-            <%= comment.created_at %>
+            <p><i class="fa fa-comment-o"></i> <%= comment.user.name %> @<%= comment.user.country %>
+            <%= comment.created_at %></p>
             <strong id="comment-title-js">
               <%= comment.title %>
             </strong> 
@@ -49,4 +48,5 @@
           </p>
         <% end %>
       </div><!--End post class-->
+    </div>
 </div>
