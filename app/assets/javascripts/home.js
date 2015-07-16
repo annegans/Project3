@@ -111,9 +111,20 @@ $(function(){
   $('.like-js').on('click', newLike);
   $('body').on('click', '.delete-post', deletePost)
 
-  //order
-  // $('.order').on('click', function(){
-  //   $.ajax("/home/sort_by")
+  //ajax call for order
+  // $('#user_nav').on('click', '.votes-order', function(e){
+  //   e.preventDefault();
+  //   var sortTag = $(this).text();
+
+  //   $.ajax({
+  //     dataType: 'json',
+  //     method: 'get',
+  //     url: '/home/sort_by?tag=' + sortTag
+  //   }).done(function(data){
+  //     $('.post1').empty()
+  //     debugger;
+  //     var htmlstring = value.title
+  //   })
   // })
 
 

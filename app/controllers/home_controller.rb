@@ -15,7 +15,12 @@ class HomeController <ApplicationController
       @posts = Post.search(params[:search]).order("created_at DESC")
     else
       @posts = Post.sorting(params[:order]).paginate(page: params[:page], per_page: 20)
-    end  
+    end 
+
+    def sort_by
+      sort = Post.order("votes_count desc")
+      render json: sort
+    end 
   end
 
   # def sort_by

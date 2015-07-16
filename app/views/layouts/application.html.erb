@@ -32,7 +32,7 @@
           <li><%= link_to "oldest", root_path(order: :oldest) %>
           <li> <%= link_to "title", root_path(order: :title) %></a></li>
           <li><%= link_to "recent", root_path(order: :recent) %></li>
-          <li><%= link_to "votes", root_path(order: :votes) %></li><%= Post.first.title %></li>
+          <li><%= link_to "votes", root_path(order: :votes), class: "votes-order" %></li><%= Post.first.title %></li>
         </ul>
          </ul>
       </div>
@@ -59,7 +59,7 @@
           <%= submit_tag "Search" %>
           <% end %>
         </div>
-          
+
         </div>
 
       </div>
