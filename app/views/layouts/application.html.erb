@@ -26,13 +26,14 @@
          <li><%= link_to "Sign up", new_user_registration_path %> or
          <%= link_to "log in", new_user_session_path %></li>
        <% end %> 
-         <a class="dropdown-toggle" href="#" title="explore">Menu</a>
+         <a class="dropdown-toggle" href="#" title="explore">Explore by</a>
           <ul class="dropdown">
-          <li class="order"> ORDER ME </li>
-          <li><%= link_to "oldest", root_path(order: :oldest) %>
-          <li> <%= link_to "title", root_path(order: :title) %></a></li>
-          <li><%= link_to "recent", root_path(order: :recent) %></li>
-          <li><%= link_to "votes", root_path(order: :votes), class: "votes-order" %></li><%= Post.first.title %></li>
+          <!-- <li class="order"> ORDER ME </li> -->
+           <li><%= link_to "Votes", root_path(order: :votes), class: "votes-order" %></li>
+          <li><%= link_to "Oldest", root_path(order: :oldest) %></li>
+          <li><%= link_to "Recent", root_path(order: :recent) %></li>
+          <li> <%= link_to "Title", root_path(order: :title) %></li>
+        
         </ul>
          </ul>
       </div>
@@ -46,17 +47,17 @@
       <i class="fa fa-instagram"></i>
       <i class="fa fa-pinterest-p"></i> -->
       <div class="search-form-complete">
-        <div class="float-right">
+        <div class="float-right sign">
         <i class="fa fa-search"></i>
-        <a href="/account/">
+        <!-- <a href="/account/">
           <i class="fa fa-plus-square"></i>
-        </a>
+        </a> -->
         </div>
         <div class="float-left">
                   <div class="search-form">  
           <%= form_tag(root_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-          <%= submit_tag "Search" %>
+          <%= text_field_tag :search, params[:search], class: "search" %>
+          <%#= submit_tag "Search", class: "search-submit" %>
           <% end %>
         </div>
 

@@ -6,8 +6,8 @@
     <div class="your-posts-inner">
       <%= form_for @post do |f| %>
         <%= f.label :title, :class => 'control-label' %>
-        <%= f.text_field :title, :class => 'text_field' %>
-         <%= f.submit "Create" ,:class => 'button_field' %>
+        <%= f.text_field :title, :class => 'text_field', placeholder: 'YOUR TITLE' %>
+         <%= f.submit "ADD IMAGES" ,:class => 'button_field' %>
       <% end %>
       </div>
     </div>
@@ -30,16 +30,13 @@
             <%= image_tag post.images.last.avatar.url%>
           </div>
           <% end %>
-          <button  class="delete-post" id="delete-<%=post.id%>" data-id="<%=post.id%>">delete</button>
+          <div class="delete-div"><button  class="delete-post" id="delete-<%=post.id%>" data-id="<%=post.id%>">delete</button></div>
+          
         </div>
       </div> 
     <% end %> 
     </div>
-      <%= form_for @post do |f| %>
-        <%= f.label :title, :class => 'control-label' %>
-        <%= f.text_field :title, :class => 'text_field' %>
-        <%= f.submit "Create" %>
-      <% end %>
+    
  
  </div>
 </div>

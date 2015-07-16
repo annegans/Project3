@@ -10,6 +10,7 @@
   border: 3px solid black;
   height: 300px;
   width: 100%;
+  outline: 0;
 }
 
 .post1{
@@ -165,6 +166,7 @@ text-transform: uppercase;
 
 .your-posts-inner {
   padding: 0 20px;
+  margin-bottom: 10%;
 }
 
 .image-style {
@@ -191,3 +193,57 @@ text-transform: uppercase;
 .logo.violet:hover { color: #8c78ba; }
 .logo.pink:hover { color: #d529cd; }
 
+
+#post_title{
+    margin-top: 4%;
+  margin-bottom: 2%;
+  border: 2px solid black;
+  /* margin: 100%; */
+  width: 99%;
+  height: 20px;
+  outline: 0;
+}
+
+.control-label{
+  display: none
+}
+
+.like-count-js{
+  margin-top: -58%;
+}
+.delete-post{
+
+  background-color: transparent;
+  border: 2px solid #1B1919;
+  color: #181515;
+  padding: 0.9px 9px;
+  font-size: 15px;
+  margin: 2px;
+  text-transform: uppercase;
+  margin-top: -10%;
+}
+.delete-div{
+  margin-top: 3%;
+}
+
+.search-submit{
+  background-color: transparent;
+  border: 2px solid #FAFAFA;
+  color: #FCFAFA;
+  padding: 0.9px 9px;
+  font-size: 15px;
+  margin: 2px;
+  text-transform: uppercase;
+}
+.search{
+  border: 2px solid white;
+  outline: 0;
+  margin-top: 7%;
+  margin-left: 64%;
+}
+.search input{
+  color:white;
+}
+.sign{
+    margin-top: 3%;
+}
