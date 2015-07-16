@@ -53,10 +53,10 @@
 
 .fa-search:before {
   content: "\f002";
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
-.fa-pinterest-p:before {
+/*.fa-pinterest-p:before {
   content: "\f231";
   font-size: 2em;
 }
@@ -69,7 +69,7 @@
 .fa-facebook-square:before {
   content: "\f082";
   font-size: 2em;
-}
+}*/
 .search-form{
   
 }

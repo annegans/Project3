@@ -1,5 +1,5 @@
 <div class="box100">
-  <div class="box box1">
+  <div class="post1">
     <% @posts.each do |post| %>
       <div class="post your-posts"  value="<%=post.id%>" data-id="<%=post.id%>">
         <div class="post-bar">
@@ -19,7 +19,7 @@
         </div>
         <% end %>
         <button  class="delete-post" id="delete-<%=post.id%>" data-id="<%=post.id%>">delete</button>
-        <button class="like-js like-button" data-id="post.id">LIKE</button>
+     
         
       </div> 
     <% end %> 

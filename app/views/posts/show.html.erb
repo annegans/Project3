@@ -11,20 +11,21 @@
     </div> 
   </div>
   <hr class="line-show">
- <%= @post.created_at %>
- 
+  <div class="show-container">
 <% @post.images.each do |image| %>
  <div class="post" value="<%=image.post.id%>" data-id="<%=image.post.id%>">
     <div class="image-show-page" ><%= image_tag image.avatar.url%></div>
+      <% end %>
     <h3>Add comment</h3>
     <button class="new-comment-js">New comment</button>
     <div class="comment-form">
       <%= form_for @comment do |f| %>
         <%= f.text_field :title %>
         <%= f.text_field :text %>
-        <%= f.hidden_field :post_id, value: image.post.id %>
+        <%#= f.hidden_field :post_id, value: image.post.id %>
         <%= f.submit "Create" %>
       <% end %>
+    </div>
     </div>
     <h3>Comments
       <p class="ajax-comments"></p>
@@ -40,6 +41,6 @@
       </p>
     <% end %>
     </div>
-  <% end %>
+<%= @post.created_at %>
 
 </div>
