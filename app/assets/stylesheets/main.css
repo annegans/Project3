@@ -1,48 +1,74 @@
+
+/*Nav bar*/
 .nav-bar{
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  height: 83px;
+  height: 59px;
   background: black;
 }
 
-.container{
+.nav-container{
   width: 85%;
-  margin: 0 auto;
-  height:83px;
+  margin-left: 16%;
+  height:59px;
 }
 
 .bar {
   display: inline-block;
-  height:83px;
+  height:59px;
   vertical-align: top;
-  width: 33%
+  margin-top: 1%;
+
+
 }
 
-.nav-right{
+.nav-left{
+    width: 13%;
  
 
 }
 .nav-center{
-  text-align: center;
+  width: 37%;
+  
+    margin: 12px 0;
 
 }
-.nav-left{
- 
+.nav-right{
+  width: 28%;
 }
 
 
 .logo a{
   color: white;
-  font-size: 52px;
+  font-size: 35px;
   font-family: helvetica;
   /* margin-left: 16%; */
   margin-top: 4%;
   text-decoration: none;
  
+}
 
+.fa-search:before {
+  content: "\f002";
+  font-size: 2em;
+}
+
+.fa-pinterest-p:before {
+  content: "\f231";
+  font-size: 2em;
+}
+
+.fa-instagram:before {
+  content: "\f16d";
+  font-size: 2em;
+}
+
+.fa-facebook-square:before {
+  content: "\f082";
+  font-size: 2em;
 }
 .search-form{
   
@@ -51,7 +77,7 @@
 
 a {
   color: rgba(255,255,255,0.8);
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
 
 }
@@ -67,8 +93,7 @@ display: none;
 
 .nav-main-menu {
   list-style-type: none;
-  padding-left: 30px;
-  margin: 32px 0;
+ 
 }
 
 .nav-main-menu li {
@@ -81,4 +106,10 @@ display: none;
 }
 .fa {
   color: white;
+  font-size: 2em;
+}
+.main-title{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px
 }

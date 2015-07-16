@@ -110,22 +110,45 @@ $(function(){
   $('body').on('click', '.delete-post', deletePost)
 
   //order
-  $('.order').on('click', function(){
-    $.ajax("/home/sort_by")
-  })
+  // $('.order').on('click', function(){
+  //   $.ajax("/home/sort_by")
+  // })
 
 
   // Dropdown toggle
-$('.dropdown-toggle').click(function(){
-  $(this).next('.dropdown').toggle();
+  $('.dropdown-toggle').click(function(){
+    $(this).next('.dropdown').toggle();
+  });
+
+  $(document).click(function(e) {
+    var target = e.target;
+    if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
+      $('.dropdown').hide();
+    }
+  });
+
+  ///random-color-js
+  $(document).ready(function()
+{
+    $(".logo").hover(function(e)
+    {
+        var randomClass = getRandomClass();
+        $(e.target).attr("class", randomClass);
+    });
 });
 
-$(document).click(function(e) {
-  var target = e.target;
-  if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
-    $('.dropdown').hide();
-  }
-});
+function getRandomClass()
+{
+    //Store available css classes
+    var classes = new Array("green", "purple", "teal", "violet", "pink");
+    
+    //Give a random number from 0 to 5
+    var randomNumber = Math.floor(Math.random()*6);
+    
+    return classes[randomNumber];
+}
+
+
 })
 
 

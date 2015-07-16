@@ -1,6 +1,27 @@
-// Place all the styles related to the Post controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.image-show-page img{
-    width: 200px;
+.like-show{
+  display: inline-block;
+  font-size: 30px;
+  margin-left: 33%;
 }
+
+.title-show{
+  text-transform: uppercase;
+  margin-left: 22%;
+  font-size: 29px;
+  display: inline-block;
+}
+
+
+.line-show {
+  height: 8px;
+  background-color: black;
+  border: none;
+  width: 56%;
+}
+
+
+.image-show-page img{
+    width: 800px;
+    margin-left: 15%;
+}
+

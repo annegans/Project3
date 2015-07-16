@@ -1,21 +1,22 @@
 
 <div class="box100">
   <!-- filter form -->
-  <form class="form-control">
+  <!-- <form class="form-control">
   Search filter:<br>
   <input type="text" name="seach">
-  <br>
+  <br> -->
 
   <div class="post-template">
-  <div class="box post1">
+  <div class=" post1">
     <% @posts.each do |post| %>
       <div class="post" value="<%=post.id%>" data-id="<%=post.id%>">
         <div class="post-bar">
           <div class="title-box">
-            <p class="title-post"><%= post.title %></p>
+            <p class="title-post"><%= link_to " #{post.title}", post_path(post.id), :class =>  "title-post" %></p>
           </div>
+          <div class="user-box"><class="user-post"p>By <%= post.user.name%></p></div>
           <div class="likes"id="amout-likes-js"> 
-            <% if post.votes.count %>
+            <% if post.votes.count %> 
              <div class="like-count-js"><%= post.votes.count %></div>
             <% end %>
           </div>
@@ -29,22 +30,14 @@
             <%= image_tag post.images.last.avatar.url%>
         </div>
         <% end %>
+        
         <button class="like-js like-button" data-id="post.id">LIKE</button>
-        <div id="link-my-post"><%= link_to "view post", post_path(post.id) %></div>
-        <% if post.user %>  
-          <p><%= post.user.name%></p>
-        <% end %>
+        <div id="link-my-post"><%= link_to "POST COMMENT", post_path(post.id) %></div>
+        <div id="link-my-post"><%= link_to "COMMENTS", post_path(post.id) %></div>
+        
 
-        <h3>Add comment</h3>
-        <button class="new-comment-js">New comment</button>
-        <div class="comment-form">
-        <%= form_for @comment do |f| %>
-          <%= f.text_field :title %>
-          <%= f.text_field :text %>
-          <%= f.hidden_field :post_id, value: post.id %>
-          <%= f.submit "Create" %>
-        <% end %>
-        </div>
+    <!--     <h2 class="title line-on-right"></h2> -->
+
     
       </div>
     <%end %>

@@ -1,5 +1,16 @@
-  
-<%= @post.title %>
+
+
+<div class="box box100">
+  <div class="above-line-show">
+    <div class="title-show">
+      <%= @post.title %>
+    </div> 
+    <div class="like-show">
+      <%=@post.votes_count %>
+    </div>
+    </div> 
+  </div>
+  <hr class="line-show">
  <%= @post.created_at %>
  
 <% @post.images.each do |image| %>
@@ -31,3 +42,4 @@
     </div>
   <% end %>
 
+</div>

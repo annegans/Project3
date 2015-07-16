@@ -1,14 +1,13 @@
+
+<div class="main-title">Upload Your Images</div>
+
 <%= form_for([@post, @image], html: {class: "dropzone", id: "media-dropzone"}) do |f| %>
   <div class="fallback">
     <%= f.file_field "avatar", multiple: true%>
   </div>
 <% end %>
 
-<div id="media-contents"></div>
+<div id="media-contents">
 
+</div>
 
-<%#= form_tag '/media_contents', method: :post, class: "dropzone", id: "media-dropzone" do %>
-<!--   <div class="fallback"> -->
-    <%#= file_field_tag "media", multiple: true%>
- <!--  </div> -->
-<%# end %>

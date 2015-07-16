@@ -1,3 +1,23 @@
 .dropzone {
-  border: 1px solid red;
+  border: 5px solid rgb(10, 9, 9);
+  padding: 138px;
+  margin-top: 48px;
+  margin-left: 26%;
+  margin-right: 27%;
 }
+
+.dz-message{
+  text-transform: uppercase;
+  color: white;
+}
+
+.dropzone:hover{
+  background-color: black
+}
+
+.thumbnail img{
+  width: 700px;
+  margin-top: 10%;
+  margin-left: 23%;
+}
+
