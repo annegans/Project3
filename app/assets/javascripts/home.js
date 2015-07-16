@@ -47,8 +47,8 @@ function createComment(e){
       comment:{title: title, text: text, post_id: id}
     }
    }).done(function(data){
-    $('[data-id=' + data.post_id + ']').append('<p>' + title + '</p>' )
-  
+    // $('[data-id=' + data.post_id + ']').append('<p>' + title + '</p>' )
+  $('[data-id=' + data.post_id + ']').parent().next().next().find('h3').find('.ajax-comments').append('<p>' + title + '</p>' )
    })
 }
 

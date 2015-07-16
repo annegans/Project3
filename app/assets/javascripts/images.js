@@ -1,6 +1,6 @@
 $(function() {
   var mediaDropzone;
-  // mediaDropzone = new Dropzone("#media-dropzone");
+  mediaDropzone = new Dropzone("#media-dropzone");
   return mediaDropzone.on("success", function(file, responseText) {
     var _this = this;
     console.log(file, responseText, responseText.avatar.url);

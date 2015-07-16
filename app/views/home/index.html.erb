@@ -21,16 +21,16 @@
             <%= image_tag post.images.last.avatar.url%>
         </div>
         <% end %>
-        <div class= "menu-botton pic"></div>
-        <div class="likes"id="amout-likes-js"> 
+        <div class= "menu-botton-pic">
+          <div id="link-my-post"><%= link_to "POST COMMENT", post_path(post.id) %></div>
+          <div id="link-my-post"><%= link_to "COMMENTS", post_path(post.id) %></div>
+          <div class="likes"id="amout-likes-js"> 
             <% if post.votes.count %> 
              <div class="like-count-js"><%= post.votes.count %></div>
             <% end %>
           </div>
-        <button class="like-js like-button" data-id="post.id">LIKE</button>
-        <div id="link-my-post"><%= link_to "POST COMMENT", post_path(post.id) %></div>
-        <div id="link-my-post"><%= link_to "COMMENTS", post_path(post.id) %></div>
-        
+          <button class="like-js like-button" data-id="post.id">LIKE</button>
+        </div>
 
     <!--     <h2 class="title line-on-right"></h2> -->
 
