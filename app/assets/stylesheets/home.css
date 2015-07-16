@@ -1,16 +1,37 @@
 
+.text_field{
+   margin-bottom: 7%;
+}
+
+
+.button_field{
+  margin-top: 6px;
+  background-color: white;
+  border: 3px solid black;
+  height: 300px;
+  width: 100%;
+}
 
 .post1{
   width: 70%;
   margin: auto;
 }
 
+.boxextra{
+  display: inline-block;
+  vertical-align: top;
+  /* margin-left: 1%; */
+  /* margin-bottom: 1%; */
+  padding: 3%;
+}
+
+
 
 .post{
   display: inline-block;
   width: 42%;
   vertical-align: top;
-  /* margin-left: 1%; */
+   margin-left: 1%; 
   /* margin-bottom: 1%; */
   padding: 3%;
 
@@ -19,6 +40,7 @@
 .post-bar{
   display: inline-block;
   width:100%;
+    border-top: 4px solid black;
 }
 
 .title-box{
@@ -66,12 +88,12 @@ text-transform: uppercase;
 }
 
 .post{
-  display: inline-block;
+ /* display: inline-block;
   width: 42%;
   vertical-align: top;
-  /* margin-left: 1%; */
+   margin-left: 1%;*/ 
   /* margin-bottom: 1%; */
-  padding: 3%;
+/*  padding: 3%;*/
 
 }
 
@@ -92,17 +114,16 @@ text-transform: uppercase;
 }
 
 .image-style img {
-  width: 398px;
-  margin-top: -16%;
-  margin-left: 4%;
-}
+  width: 100%;
 }
 
 .post-bar{
   height: 57px;
 }
 
-
+.empty-box {
+  display: inline-block;
+}
 
 .like-button{
   background-color: transparent;
@@ -124,6 +145,35 @@ text-transform: uppercase;
   color: white;
 }
 
+.your-posts {
+  display: inline-block;
+  vertical-align: top;
+    margin-right: -4px;
+  width: 50%;
+  margin-bottom: 25px;
+}
+
+.your-posts form {
+  border-top: 4px solid black;
+}
+
+.your-posts-inner {
+  padding: 0 20px;
+}
+
+.image-style {
+  overflow: hidden;
+  height: 300px;
+}
+
+.float-left {
+  float: left;
+}
+
+
+.float-right {
+  float: right;
+}
 
 .logo.green:hover { color: #1ace84; }
 .logo.purple:hover { color: #a262c0; }

@@ -46,13 +46,22 @@
       <i class="fa fa-instagram"></i>
       <i class="fa fa-pinterest-p"></i> -->
       <div class="search-form-complete">
+        <div class="float-right">
         <i class="fa fa-search"></i>
-        <div class="search-form">  
+        <a href="/account/">
+          <i class="fa fa-plus-square"></i>
+        </a>
+        </div>
+        <div class="float-left">
+                  <div class="search-form">  
           <%= form_tag(root_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
           <%= submit_tag "Search" %>
           <% end %>
         </div>
+          
+        </div>
+
       </div>
     </div>
     <div class="nav">
