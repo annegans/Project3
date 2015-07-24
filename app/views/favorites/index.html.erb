@@ -1,4 +1,8 @@
-<div class="container-drop"></div>
-<% @favorites.each do |favorite| %>
-  <%= image_tag favorite.text %>
-<% end %>
+<div class="container">
+  <% @favorites.each do |favorite| %>
+  <div class="row activity" draggable="true">
+    <div><%= image_tag favorite.text %><div>
+  <% end %>
+  </div>
+  
+</div>

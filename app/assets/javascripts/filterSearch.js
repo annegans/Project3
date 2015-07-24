@@ -14,4 +14,15 @@
 // });
 
 
-console.log('dhtis is')
+ $(function () {
+     
+     var numItems = $('.activity').length;
+     
+     
+     $(".row").each(function (index) {
+         var myelement = $(this);
+         myelement.draggable();
+     });
+    
+
+ });
