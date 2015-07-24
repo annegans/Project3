@@ -32,8 +32,7 @@ function commentForm(){
 //    })
 // }
 
-function createComment(e){
-  
+function createComment(e){  
   e.preventDefault(); 
   title = $('#comment_title', $(this)).val();
   text = $('#comment_text', $(this)).val();
@@ -53,6 +52,22 @@ function createComment(e){
 
   $('#comment_title')[0].reset()
    })
+}
+
+function saveFavorite(e){
+  e.preventDefault
+  var image = $(this).parent().parent().find('img')
+  var text = image.attr('src')
+  $.ajax({
+    method: 'post',
+    url: '/favorites',
+    dataType: 'json',
+    data: {
+      favorite:{text: text}
+    }
+  }).done(function(data){
+    console.log('favo saved')
+  })
 }
 
 
@@ -79,10 +94,6 @@ function newLike(e){
 }
 
 
-// function updateView(count){
-//   console.log(count)
-//   $('.like-count-js').html(count);
-// }
 
 //delete post
 function deletePost(e){
@@ -102,6 +113,8 @@ function deletePost(e){
 }
 
 
+
+
 //eventlisteners
 $(function(){
   console.log('ddsa')
@@ -109,60 +122,42 @@ $(function(){
   $('.fa-search').on('click', searchForm)
   // $('.post').on('submit', '.new_comment', createComment)
   $('.new_comment').on('submit', createComment)
-
-
   $('.like-js').on('click', newLike);
   $('body').on('click', '.delete-post', deletePost)
-
-  //ajax call for order
-  // $('#user_nav').on('click', '.votes-order', function(e){
-  //   e.preventDefault();
-  //   var sortTag = $(this).text();
-
-  //   $.ajax({
-  //     dataType: 'json',
-  //     method: 'get',
-  //     url: '/home/sort_by?tag=' + sortTag
-  //   }).done(function(data){
-  //     $('.post1').empty()
-  //     debugger;
-  //     var htmlstring = value.title
-  //   })
-  // })
-
-
-  // Dropdown toggle
+  $('body').on('click', '.save-post', saveFavorite )
+   // Dropdown toggle
   $('.dropdown-toggle').click(function(){
     $(this).next('.dropdown').toggle();
   });
 
-  $(document).click(function(e) {
-    var target = e.target;
-    if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
-      $('.dropdown').hide();
-    }
-  });
+  // ajax call for order
+  $('#user_nav').on('click', '.votes-order', function(e){
+    e.preventDefault();
+    var sortTag = $(this).text();
 
-  ///random-color-js
-  $(document).ready(function()
-{
-    $(".logo").hover(function(e)
-    {
-        var randomClass = getRandomClass();
-        $(e.target).attr("class", randomClass);
-    });
-});
+    $.ajax({
+      dataType: 'json',
+      method: 'get',
+      url: '/home/sort_by?tag=' + sortTag
+    }).done(function(data){
+      $('.post1').empty()
+      debugger;
+     $(data).each(function (index, value){
+     console.log(value.title, value.votes_count)
+     })
 
-function getRandomClass()
-{
-    //Store available css classes
-    var classes = new Array("green", "purple", "teal", "violet", "pink");
-    
-    //Give a random number from 0 to 5
-    var randomNumber = Math.floor(Math.random()*6);
-    
-    return classes[randomNumber];
-}
+    })
+  })
+
+
+  // $(document).click(function(e) {
+  //   var target = e.target;
+  //   if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
+  //     $('.dropdown').hide();
+  //   }
+  // });
 
 
 })
+
+

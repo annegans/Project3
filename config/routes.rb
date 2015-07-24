@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :home do
     get :sort_by, on: :collection
   end
-  
+  resources :favorites
   
 
   get 'account' => 'users#account'

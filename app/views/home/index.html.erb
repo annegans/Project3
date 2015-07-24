@@ -1,48 +1,37 @@
 
 <div class="box100">
-  <!-- filter form -->
-  <!-- <form class="form-control">
-  Search filter:<br>
-  <input type="text" name="seach">
-  <br> -->
-<!-- 
-  <div class="post-template"> -->
   <div class=" post1">
     <% @posts.each do |post| %>
       <div class="post" value="<%=post.id%>" data-id="<%=post.id%>">
+
         <div class="post-bar">
           <div class="title-box">
             <p class="title-post"><%= link_to " #{post.title}", post_path(post.id), :class =>  "title-post" %></p>
           </div>
-          <div class="user-box"><class="user-post"p>By <%= post.user.name%> @ <%= post.user.country %></p></div>
+          <div class="user-box"><p class="user-post">By: <%= post.user.name%> @<%= post.user.country %></p></div>
         </div>
         <% if post.images.first %>  
         <div class="image-style">
-            <%= image_tag post.images.last.avatar.url%>
+          <%= image_tag post.images.last.avatar.url%>
         </div>
         <% end %>
         <div class= "menu-botton-pic">
-          <div id="link-my-post"><%= link_to "POST COMMENT", post_path(post.id) %></div>
-          <div id="link-my-post"><%= link_to "COMMENTS", post_path(post.id) %></div>
-          <div class="likes"id="amout-likes-js"> 
+          <div id="link-my-post"><%= link_to "ADD COMMENT", post_path(post.id) %></div>
+          <div id="link-my-post"><%= link_to "VIEW POST", post_path(post.id) %></div>
+      
+          <button class="save-post" >Save</button>
+        
+          <div class="likes likes-homepage" id="amout-likes-js"> 
             <% if post.votes.count %> 
-             <div class="like-count-js"><%= post.votes.count %></div>
+             <div class="like-count-js" id="like-homepage"><%= post.votes.count %></div>
             <% end %>
           </div>
           <button class="like-js like-button" data-id="post.id">LIKE</button>
         </div>
 
-    <!--     <h2 class="title line-on-right"></h2> -->
-
-    
       </div>
     <%end %>
-
-  <%# @images.each do |image| %>
-    <%#= image[:tempfile] %>
-  <%#end %>
-
   </div>
-  </div>
+
 </div>
 

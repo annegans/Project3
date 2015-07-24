@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :images, through: :posts
   has_many :comments
   has_many :votes
+  has_many :favorites
 end

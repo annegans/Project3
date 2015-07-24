@@ -6,8 +6,10 @@
         <div class="title-show">
           <%= @post.title %> 
         </div> 
-        <div class="user-show">By <%= @post.user.name %></div>
+        <div class="user-show">By: <%= @post.user.name %>, </div>
          <div class="show-created-at"> 
+         <%= time_ago_in_words(@post.created_at) %> ago
+         
           <%#=  (Time.now - @post.created_at.to_time)/1.hour.to_i.round(1) %>
         </div>
         <div class="like-show">
@@ -40,8 +42,8 @@
         <!-- comments -->
         <% @post.comments.each do |comment| %>
           <p>
-            <p><i class="fa fa-comment-o"></i> <%= comment.user.name %> @<%= comment.user.country %>
-            <%= comment.created_at %></p>
+            <p><i class="fa fa-comment-o"></i><p> <%= comment.user.name %>@<%= comment.user.country %>,
+            <%= time_ago_in_words(comment.created_at) %> ago</p>
             <strong id="comment-title-js">
               <%= comment.title %>
             </strong> 
