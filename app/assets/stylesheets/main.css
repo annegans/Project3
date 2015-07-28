@@ -137,7 +137,31 @@ display: none;
 }
 
 
+.savedb{
+  position: absolute;
+    /* top: 53px; */
+    margin-top: -12%;
+    text-align: center;
+    margin-left: 13%;
+    display: none;
+}
 
+.likedb{
+   position: absolute;
+    /* top: 53px; */
+    margin-top: -12%;
+    text-align: center;
+    margin-left: 13%;
+    display:none;
+}
+
+.likedbshow{
+  display: block;
+}
+
+.savedbshow{
+  display: block;
+}
 
 
 

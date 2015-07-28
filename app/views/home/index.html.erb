@@ -13,8 +13,12 @@
         <% if post.images.first %>  
         <div class="image-style">
           <%= image_tag post.images.last.avatar.url%>
+          <div class="savedb">SAVED</div>
+        <div class="likedb">LIKED</div>
         </div>
+        
         <% end %>
+        <% if current_user %>
         <div class= "menu-botton-pic">
           <div id="link-my-post"><%= link_to "ADD COMMENT", post_path(post.id) %></div>
           <div id="link-my-post"><%= link_to "VIEW POST", post_path(post.id) %></div>
@@ -28,6 +32,7 @@
           </div>
           <button class="like-js like-button" data-id="post.id">LIKE</button>
         </div>
+        <% end %>
 
       </div>
     <%end %>

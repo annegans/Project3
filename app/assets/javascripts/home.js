@@ -67,6 +67,8 @@ function saveFavorite(e){
     }
   }).done(function(data){
     console.log('favo saved')
+    $('.savedb').addClass('savedbshow')
+    setTimeout(function(){ $('.savedb').removeClass('savedbshow'); },2000);
   })
 }
 
@@ -87,6 +89,8 @@ function newLike(e){
     console.log(data)
     // _this.prev().find('.like-count-js').html(data);
     _this.prev().find('.like-count-js').html(data);
+    $('.likedb').addClass('likedbshow')
+    setTimeout(function(){ $('.likedb').removeClass('likedbshow'); },2000);
   })
   .fail(function(err) {
     console.log(err)
