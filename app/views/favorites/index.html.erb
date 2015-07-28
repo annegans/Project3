@@ -1,8 +1,7 @@
-<div class="container">
+
   <% @favorites.each do |favorite| %>
   <div class="row activity" draggable="true">
-    <div><%= image_tag favorite.text %><div>
+    <%= image_tag favorite.text %>
+     </div>
   <% end %>
-  </div>
-  
-</div>
+
