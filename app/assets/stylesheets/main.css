@@ -116,6 +116,25 @@ display: none;
   font-size: 20px
 }
 
+.scrollToTop{
+    width: 83px;
+    height: 21px;
+    padding: 4px;
+    text-align: center;
+    background: #131212;
+    /* font-weight: bold; */
+    font-family: helvetica;
+    color: #FFF;
+    text-decoration: none;
+    position: fixed;
+    top: 77px;
+    right: 15px;
+    display: none;
+
+}
+.scrollToTop:hover{
+  text-decoration:none;
+}
 
 
 
