@@ -58,6 +58,7 @@ function saveFavorite(e){
   e.preventDefault
   var image = $(this).parent().parent().find('img')
   var text = image.attr('src')
+  var _this = $(this)
   $.ajax({
     method: 'post',
     url: '/favorites',
@@ -67,7 +68,8 @@ function saveFavorite(e){
     }
   }).done(function(data){
     console.log('favo saved')
-    $('.savedb').addClass('savedbshow')
+
+     _this.parent().parent().find('.image-style').find('.savedb').addClass('savedbshow')
     setTimeout(function(){ $('.savedb').removeClass('savedbshow'); },2000);
   })
 }
@@ -77,7 +79,7 @@ function saveFavorite(e){
 function newLike(e){
   e.preventDefault(); 
   var postId2 = $(this).closest('.post').data('id')
-  _this = $(this)
+  var _this = $(this)
   $.ajax({
      method: 'post',
      url: '/votes',
@@ -87,9 +89,10 @@ function newLike(e){
     }
   }).done(function(data){
     console.log(data)
+   console.log(_this)
     // _this.prev().find('.like-count-js').html(data);
     _this.prev().find('.like-count-js').html(data);
-    $('.likedb').addClass('likedbshow')
+   _this.parent().parent().find('.image-style').find('.likedb').addClass('likedbshow')
     setTimeout(function(){ $('.likedb').removeClass('likedbshow'); },2000);
   })
   .fail(function(err) {
