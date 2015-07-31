@@ -45,7 +45,6 @@
   color: white;
   font-size: 35px;
   font-family: helvetica;
-  /* margin-left: 16%; */
   margin-top: 4%;
   text-decoration: none;
  
@@ -55,26 +54,6 @@
   content: "\f002";
   font-size: 1.5em;
 }
-
-
-/*.fa-pinterest-p:before {
-  content: "\f231";
-  font-size: 2em;
-}
-
-.fa-instagram:before {
-  content: "\f16d";
-  font-size: 2em;
-}
-
-.fa-facebook-square:before {
-  content: "\f082";
-  font-size: 2em;
-}*/
-.search-form{
-  
-}
-
 
 a {
   color: white;

@@ -131,14 +131,14 @@ text-transform: uppercase;
 }
 
 .like-button{
-  background-color: transparent;
-  border: 2px solid #1B1919;
-  color: #181515;
-  padding: 0.9px 9px;
-  font-size: 15px;
-  margin: 2px;
-  text-transform: uppercase;
-  margin-top: -5%;
+     background-color: transparent;
+    border: 2px solid #1B1919;
+    color: #181515;
+    padding: 1.1px 9px;
+    font-size: 14px;
+    /* margin: 2px; */
+    text-transform: uppercase;
+    margin-top: -3%;
 }
 
 .like-button:hover{
@@ -206,7 +206,7 @@ text-transform: uppercase;
 }
 
 .like-count-js{
-  padding: 9.5%;
+  padding: 6.5%;
 }
 
 .delete-post{
@@ -256,26 +256,26 @@ text-transform: uppercase;
 }
 
 .likes-homepage{
-  margin-top: 1%;
-  border: 2px solid black;
-  width: 28px;
-  height: 19px;
-  margin-top: 0%;
-  text-align: center;
-  margin-top: 0%;
-  display: inline-block;
-  font-size: 19px;
+    margin-top: 1%;
+    border: 2px solid black;
+    width: 28px;
+    height: 18px;
+    margin-top: 0%;
+    text-align: center;
+    margin-top: 0%;
+    display: inline-block;
+    font-size: 19px;
 }
 
 .save-post{
- background-color: transparent;
-  border: 2px solid #1B1919;
-  color: #181515;
-  padding: 0.6px 9px;
-  font-size: 14px;
-  margin: 2px;
-  text-transform: uppercase;
-  margin-top: -5%;
+     background-color: transparent;
+    border: 2px solid #1B1919;
+    color: #181515;
+    padding: 1.1px 9px;
+    font-size: 14px;
+    /* margin: 2px; */
+    text-transform: uppercase;
+    margin-top: -6%;
 }
 
 #like-homepage{
