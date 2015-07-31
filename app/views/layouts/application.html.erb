@@ -13,76 +13,79 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="nav-bar">
-  <div class="nav-container">
-    <!-- nav-left -->
-    <div class="bar nav-left">
-      <li class="logo"><%= link_to "LIVIN IT", root_path %></li>
-    </div>
-    <!-- nav-center -->
-    <div class="bar nav-center">
-      <div id="user_nav">
-       <% if current_user %>
-         <%#= current_user.name %>
-         <ul class="nav-main-menu">
-         <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
-         <li><%= link_to "My posts", account_path %></li>
-         <li><%= link_to "Favorites", favorites_path %></li>
-       <% else %>
-         <li><%= link_to "Sign up", new_user_registration_path %> or
-         <%= link_to "log in", new_user_session_path %></li>
-       <% end %> 
-         <a class="dropdown-toggle" href="#" title="explore">Explore by</a>
-          <ul class="dropdown">
-          <!-- <li class="order"> ORDER ME </li> -->
-           <li><%= link_to "Votes", root_path(order: :votes), class: "votes-order" %></li>
-          <li><%= link_to "Oldest", root_path(order: :oldest) %></li>
-          <li><%= link_to "Recent", root_path(order: :recent) %></li>
-          <li> <%= link_to "Title", root_path(order: :title) %></li>
-        
-        </ul>
-         </ul>
+<div style="width:1400px; margin:0 auto;">
+ <div style="width:100%; margin:0 auto;">
+    <div class="nav-bar">
+      <div class="nav-container">
+        <!-- nav-left -->
+        <div class="bar nav-left">
+          <li class="logo"><%= link_to "LIVIN IT", root_path %></li>
+        </div>
+        <!-- nav-center -->
+        <div class="bar nav-center">
+          <div id="user_nav">
+           <% if current_user %>
+             <%#= current_user.name %>
+             <ul class="nav-main-menu">
+             <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+             <li><%= link_to "My posts", account_path %></li>
+             <li><%= link_to "Favorites", favorites_path %></li>
+           <% else %>
+             <li><%= link_to "Sign up", new_user_registration_path %> or
+             <%= link_to "log in", new_user_session_path %></li>
+           <% end %> 
+             <a class="dropdown-toggle" href="#" title="explore">Explore by</a>
+              <ul class="dropdown">
+              <!-- <li class="order"> ORDER ME </li> -->
+               <li><%= link_to "Votes", root_path(order: :votes), class: "votes-order" %></li>
+              <li><%= link_to "Oldest", root_path(order: :oldest) %></li>
+              <li><%= link_to "Recent", root_path(order: :recent) %></li>
+              <li> <%= link_to "Title", root_path(order: :title) %></li>
+            
+            </ul>
+             </ul>
+          </div>
+        </div>
+        <!-- nav-left -->
+        <div class="bar nav-right">
+        <!--  <i class="fa fa-sign-out"></i>
+        <i class="fa fa-sign-in"></i> -->
+        <!-- <i class="fa fa-user"></i> -->
+          <!-- <i class="fa fa-facebook-square"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-pinterest-p"></i> -->
+          <div class="search-form-complete">
+            <div class="float-right sign">
+            <i class="fa fa-search"></i>
+            <!-- <a href="/account/">
+              <i class="fa fa-plus-square"></i>
+            </a> -->
+            </div>
+            <div class="float-left">
+                      <div class="search-form">  
+              <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], class: "search" %>
+              <%#= submit_tag "Search", class: "search-submit" %>
+              <% end %>
+            </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="nav">
+          <nav class="main-nav"></nav>
+          <nav class="logo-nav"></nav>
+        </div>
       </div>
     </div>
-    <!-- nav-left -->
-    <div class="bar nav-right">
-    <!--  <i class="fa fa-sign-out"></i>
-    <i class="fa fa-sign-in"></i> -->
-    <!-- <i class="fa fa-user"></i> -->
-      <!-- <i class="fa fa-facebook-square"></i>
-      <i class="fa fa-instagram"></i>
-      <i class="fa fa-pinterest-p"></i> -->
-      <div class="search-form-complete">
-        <div class="float-right sign">
-        <i class="fa fa-search"></i>
-        <!-- <a href="/account/">
-          <i class="fa fa-plus-square"></i>
-        </a> -->
-        </div>
-        <div class="float-left">
-                  <div class="search-form">  
-          <%= form_tag(root_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], class: "search" %>
-          <%#= submit_tag "Search", class: "search-submit" %>
-          <% end %>
-        </div>
+    <div class="space-nav"></div>
 
-        </div>
+    <a href="#" class="scrollToTop">TO TOP</a>
 
-      </div>
-    </div>
-    <div class="nav">
-      <nav class="main-nav"></nav>
-      <nav class="logo-nav"></nav>
-    </div>
-  </div>
+    <%= yield %>
+ </div>
 </div>
-<div class="space-nav"></div>
-
-<a href="#" class="scrollToTop">TO TOP</a>
-
-<%= yield %>
-
 </body>
 </html>
 <nav></nav>

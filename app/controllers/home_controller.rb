@@ -26,7 +26,7 @@ class HomeController <ApplicationController
     def sort_by
       @posts = Post.order("votes_count desc")
 
-      render json: @posts
+      render json: @posts, include: :images
     end
 
   end

@@ -12,8 +12,8 @@
   width: 100%;
   outline: 0;
 }
-.button_field:hover{
-  
+
+.button_field:hover{ 
   background-color: black;
   color:white;
 }
@@ -26,27 +26,22 @@
 .boxextra{
   display: inline-block;
   vertical-align: top;
-  /* margin-left: 1%; */
-  /* margin-bottom: 1%; */
   padding: 3%;
 }
-
-
 
 .post{
   display: inline-block;
   width: 42%;
   vertical-align: top;
-   margin-left: 1%; 
-  /* margin-bottom: 1%; */
+  margin-left: 1%; 
   padding: 3%;
-
 }
+
 /*above line post*/
 .post-bar{
   display: inline-block;
   width:100%;
-    border-top: 4px solid black;
+  border-top: 4px solid black;
 }
 
 .title-box{
@@ -67,6 +62,7 @@
 .user-box{
   display: inline-block;
 }
+
 .user-post{
 }
 
@@ -80,11 +76,9 @@
 
 /*under-picture-post*/
 #link-my-post{
-    border: 2px solid black;
+  border: 2px solid black;
   width: 29%;
   text-align: center;
-  /* height: 18%; */
-  test-transform: uppercase;
   display: inline-block;
 }
 
@@ -97,6 +91,7 @@
   background-color: black;
   color:white;
 }
+
 #link-my-post a{
   color:black;
   font-size: 14px;
@@ -105,17 +100,6 @@
 
 .comment-form {
 text-transform: uppercase;
-/*display: none;*/
-}
-
-.post{
- /* display: inline-block;
-  width: 42%;
-  vertical-align: top;
-   margin-left: 1%;*/ 
-  /* margin-bottom: 1%; */
-/*  padding: 3%;*/
-
 }
 
 .title:after {
@@ -162,7 +146,6 @@ text-transform: uppercase;
   color:white;
 }
 
-
 .order {
   color: white;
 }
@@ -170,7 +153,7 @@ text-transform: uppercase;
 .your-posts {
   display: inline-block;
   vertical-align: top;
-    margin-right: -4px;
+  margin-right: -4px;
   width: 50%;
   margin-bottom: 25px;
 }
@@ -199,7 +182,7 @@ text-transform: uppercase;
 }
 
 .menu-botton-pic{
-    margin-top: 2%;
+  margin-top: 2%;
 }
 
 .logo.green:hover { color: #1ace84; }
@@ -210,21 +193,20 @@ text-transform: uppercase;
 
 
 #post_title{
-    margin-top: 4%;
+  margin-top: 4%;
   margin-bottom: 2%;
   border: 2px solid black;
-  /* margin: 100%; */
   width: 99%;
   height: 20px;
   outline: 0;
 }
 
 .control-label{
-  display: none
+  display: none;
 }
 
 .like-count-js{
-  margin-top: -58%;
+  padding: 9.5%;
 }
 
 .delete-post{
@@ -257,15 +239,18 @@ text-transform: uppercase;
   margin: 2px;
   text-transform: uppercase;
 }
+
 .search{
   border: 2px solid white;
   outline: 0;
   margin-top: 7%;
   margin-left: 64%;
 }
+
 .search input{
   color:white;
 }
+
 .sign{
     margin-top: 3%;
 }
@@ -273,29 +258,27 @@ text-transform: uppercase;
 .likes-homepage{
   margin-top: 1%;
   border: 2px solid black;
-  /* padding: 0.5px; */
-  width: 22px;
-  height: 18px;
+  width: 28px;
+  height: 19px;
   margin-top: 0%;
   text-align: center;
   margin-top: 0%;
   display: inline-block;
   font-size: 19px;
-
-
 }
+
 .save-post{
  background-color: transparent;
   border: 2px solid #1B1919;
   color: #181515;
-  padding: 0.9px 9px;
-  font-size: 15px;
+  padding: 0.6px 9px;
+  font-size: 14px;
   margin: 2px;
   text-transform: uppercase;
   margin-top: -5%;
 }
 
 #like-homepage{
-    margin-top: -14%;  
+  margin-top: -14%;  
 }
 
