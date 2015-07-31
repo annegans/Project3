@@ -10,11 +10,17 @@
   background: black;
 }
 
-.nav-container{
-  width: 85%;
-  margin-left: 16%;
-  height:59px;
+.nav-pixels{
+   width: 1484px;
 }
+
+.nav-container{
+    width: 79%;
+    margin-left: 16%;
+    height: 59px;
+}
+
+
 
 .bar {
   display: inline-block;
