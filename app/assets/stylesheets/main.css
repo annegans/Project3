@@ -129,6 +129,9 @@ display: none;
     text-align: center;
     margin-left: 13%;
     display: none;
+    padding: 3px;
+    color: #26E6EE;
+    border: 2px solid #2BDEE2;
 }
 
 .likedb{
@@ -137,7 +140,10 @@ display: none;
     margin-top: -12%;
     text-align: center;
     margin-left: 13%;
+    color: #26E6EE;
+    border: 2px solid #2BDEE2;
     display:none;
+    padding: 3px;
 }
 
 .likedbshow{
@@ -148,6 +154,9 @@ display: none;
   display: block;
 }
 
+.user-sign-up{
+  line-height: 50px;
+}
 
 
 

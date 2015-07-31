@@ -27,24 +27,22 @@
           <div id="user_nav">
            <% if current_user %>
              <%#= current_user.name %>
-             <ul class="nav-main-menu">
+           <ul class="nav-main-menu">
              <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
              <li><%= link_to "My posts", account_path %></li>
              <li><%= link_to "Favorites", favorites_path %></li>
-           <% else %>
-             <li><%= link_to "Sign up", new_user_registration_path %> or
-             <%= link_to "log in", new_user_session_path %></li>
-           <% end %> 
              <a class="dropdown-toggle" href="#" title="explore">Explore by</a>
-              <ul class="dropdown">
+             <ul class="dropdown">
               <!-- <li class="order"> ORDER ME </li> -->
-               <li><%= link_to "Votes", root_path(order: :votes), class: "votes-order" %></li>
+              <li><%= link_to "Votes", root_path(order: :votes), class: "votes-order" %></li>
               <li><%= link_to "Oldest", root_path(order: :oldest) %></li>
               <li><%= link_to "Recent", root_path(order: :recent) %></li>
               <li> <%= link_to "Title", root_path(order: :title) %></li>
-            
-            </ul>
+            <% else %>
+              <li class="user-sign-up"><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "log in", new_user_session_path %></li>
+            <% end %> 
              </ul>
+           </ul>
           </div>
         </div>
         <!-- nav-left -->
