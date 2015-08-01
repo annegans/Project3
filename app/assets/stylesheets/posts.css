@@ -1,7 +1,7 @@
 .above-line-show{
   border-top: 4px solid black;
-  width: 42%;
-  margin-left: 16.5%
+  width: 39%;
+  margin-left: 17.6%
 }
 
 .show-container-left{
@@ -23,9 +23,11 @@
 }
 
 .title-show{
-  text-transform: uppercase;
-  font-size: 29px;
-  display: inline-block;
+    text-transform: uppercase;
+    font-size: 22px;
+    display: inline-block;
+    margin-top: 14px;
+    margin-right: 17px;
 }
 
 
@@ -47,6 +49,8 @@
 }
 .show-created-at{
   display: inline-block;
+  font-size: 13px;
+  text-transform: capitalize;
 
 }
 
@@ -58,29 +62,33 @@
 #comments-scroll{
   overflow: scroll;
   height: 500px;
+  margin-top:9%;
 }
 .comment-box{
-  width: 22%;
-  margin-left: -2%;
-  border-top: 4px solid black;
-  margin-top: -2.67%;
+    width: 21%;
+    margin-left: -2%;
+    border-top: 4px solid black;
+    margin-top: -3%;
 }
 
 .title-post-box{
-  font-size: 24px;
+    font-size: 22px;
+    margin-top: 14px;
 }
 
 .commit-comment{
-  border: solid black 2px;
-  /* padding: 30%; */
-  height: 30%;
-  height: 14%;
-  /* padding: 14%; */
-  width: 100%;
-  height: 80px;
-  /* margin-left: 10%; */
-   margin-top: 18%;
-     outline: 0;
+    border: solid black 2px;
+    /* padding: 30%; */
+    height: 30%;
+    height: 14%;
+    /* padding: 14%; */
+    width: 79%;
+    height: 27px;
+    /* margin-left: 10%; */
+    margin-top: 6%;
+    outline: 0;
+    /* size: 14px; */
+    padding: 32px;
 
 }
 .box50-show{
@@ -107,4 +115,8 @@ button{
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+p{
+  text-transform:capitalize;
 }
