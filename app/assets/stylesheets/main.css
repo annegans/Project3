@@ -32,15 +32,13 @@
 }
 
 .nav-left{
-    width: 13%;
- 
-
+  width: 13%; 
 }
+
+
 .nav-center{
   width: 37%;
-  
-    margin: 12px 0;
-
+  margin: 12px 0;
 }
 .nav-right{
   width: 28%;

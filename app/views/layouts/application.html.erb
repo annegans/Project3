@@ -30,19 +30,19 @@
           <div id="user_nav">
            <% if current_user %>
              <%#= current_user.name %>
-           <ul class="nav-main-menu">
-             <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
-             <li><%= link_to "My posts", account_path %></li>
-             <li><%= link_to "Favorites", favorites_path %></li>
+           <ul class="nav-main-menu ">
+             <li><%= link_to "Log out", destroy_user_session_path, :method => :delete , :class => "font-gil" %></li>
+             <li><%= link_to "My posts", account_path , :class => "font-gil"  %></li>
+             <li><%= link_to "Favorites", favorites_path  , :class => "font-gil"%></li>
              <a class="dropdown-toggle" href="#" title="explore">Explore by</a>
              <ul class="dropdown">
               <!-- <li class="order"> ORDER ME </li> -->
-              <li><%= link_to "Votes", root_path(order: :votes), class: "votes-order" %></li>
-              <li><%= link_to "Oldest", root_path(order: :oldest) %></li>
-              <li><%= link_to "Recent", root_path(order: :recent) %></li>
-              <li> <%= link_to "Title", root_path(order: :title) %></li>
+              <li><%= link_to "Votes", root_path(order: :votes), class: "votes-order" , :class => "font-gil" %></li>
+              <li><%= link_to "Oldest", root_path(order: :oldest) , :class => "font-gil" %></li>
+              <li><%= link_to "Recent", root_path(order: :recent)  , :class => "font-gil"%></li>
+              <li> <%= link_to "Title", root_path(order: :title) , :class => "font-gil" %></li>
             <% else %>
-              <li class="user-sign-up"><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "log in", new_user_session_path %></li>
+              <li class="user-sign-up"><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "log in", new_user_session_path , :class => "font-gil" %></li>
             <% end %> 
              </ul>
            </ul>

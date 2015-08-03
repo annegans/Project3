@@ -1,7 +1,12 @@
 
+  
+<div class="title-favorites font-gil">PlAY AROUND WITH YOUR FAVORITES | DRAG AND DROP | MIX AND MATCH</div>
+<div class="favorites-box">
   <% @favorites.each do |favorite| %>
-  <div class="row activity" draggable="true">
-    <%= image_tag favorite.text %>
-     </div>
+  <div class="favorite-box">
+    <div class="row activity" draggable="true">
+      <%= image_tag favorite.text , :class => "image-favorites" %> 
+    </div>
+  </div>
   <% end %>
-
+</div>
