@@ -34,7 +34,7 @@
              <li><%= link_to "Log out", destroy_user_session_path, :method => :delete , :class => "font-gil" %></li>
              <li><%= link_to "My posts", account_path , :class => "font-gil"  %></li>
              <li><%= link_to "Favorites", favorites_path  , :class => "font-gil"%></li>
-             <a class="dropdown-toggle" href="#" title="explore">Explore by</a>
+             <a class="dropdown-toggle font-gil" href="#" title="explore">Explore by</a>
              <ul class="dropdown">
               <!-- <li class="order"> ORDER ME </li> -->
               <li><%= link_to "Votes", root_path(order: :votes), class: "votes-order" , :class => "font-gil" %></li>

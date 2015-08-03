@@ -3,10 +3,12 @@
 <div class="title-favorites font-gil">PlAY AROUND WITH YOUR FAVORITES | DRAG AND DROP | MIX AND MATCH</div>
 <div class="favorites-box">
   <% @favorites.each do |favorite| %>
-  <div class="favorite-box">
+  <div class="favorite-box" value="<%=favorite.id%>" data-id="<%=favorite.id%>">
     <div class="row activity" draggable="true">
       <%= image_tag favorite.text , :class => "image-favorites" %> 
+       <button class="favorite-remove">REMOVE</button>
     </div>
+     
   </div>
   <% end %>
 </div>

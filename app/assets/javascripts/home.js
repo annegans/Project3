@@ -13,24 +13,6 @@ function commentForm(){
   })
 }
 
-// create comment homepage 
-// function createComment(e){
-//   e.preventDefault(); 
-//   title = $('#comment_title', $(this)).val();
-//   text = $('#comment_text', $(this)).val();
-//   var postId =  $(this).closest('.post').data('id')
-//   console.log('createComment');
-//    $.ajax({
-//     method: 'post',
-//     url: '/comments',
-//     dataType: 'json',
-//     data: {
-//       comment:{title: title, text: text, post_id: postId}
-//     }
-//    }).done(function(data){
-//     $('[data-id=' + data.post_id + ']').find('.ajax-comments').append('<p>' + title + '</p>' )
-//    })
-// }
 
 function createComment(e){  
   e.preventDefault(); 
@@ -54,6 +36,8 @@ function createComment(e){
    })
 }
 
+// Favotites
+
 function saveFavorite(e){
   e.preventDefault
   var image = $(this).parent().parent().find('img')
@@ -73,6 +57,25 @@ function saveFavorite(e){
     setTimeout(function(){ $('.savedb').removeClass('savedbshow'); },2000);
   })
 }
+
+function removeFavorite(e){
+  console.log('favorites')
+   e.preventDefault
+   var favoriteId = $(this).closest('.favorite-box').data('id')
+   _favorite = $(this)
+   $.ajax({
+    dataType: 'json',
+    method: 'delete',
+    url: '/favorites/' + favoriteId
+  }).done(function(data){
+   
+    _favorite.closest('.favorite-box').remove()
+
+  })
+
+}
+
+
 
 
 //create new like
@@ -114,7 +117,6 @@ function deletePost(e){
     method: 'delete',
     url: '/posts/' + postId
   }).done(function(data){
-    //Remove the post from the page;
     _post.closest('.your-posts').remove()
   })
 }
@@ -124,14 +126,16 @@ function deletePost(e){
 
 //eventlisteners
 $(function(){
-  console.log('ddsa')
-  // $('.new-comment-js').on('click', commentForm);
+  
   $('.fa-search').on('click', searchForm)
-  // $('.post').on('submit', '.new_comment', createComment)
   $('.new_comment').on('submit', createComment)
   $('.like-js').on('click', newLike);
   $('body').on('click', '.delete-post', deletePost)
-  $('body').on('click', '.save-post', saveFavorite )
+  $('body').on('click', '.save-post', saveFavorite)
+  $(".favorite-remove").on('click', removeFavorite)
+   
+
+
    // Dropdown toggle
   $('.dropdown-toggle').click(function(){
     $(this).next('.dropdown').toggle();
@@ -141,7 +145,6 @@ $(function(){
   $('#user_nav').on('click', '.votes-order', function(e){
     e.preventDefault();
     var sortTag = $(this).text();
-
     $.ajax({
       dataType: 'json',
       method: 'get',
@@ -155,14 +158,6 @@ $(function(){
 
     })
   })
-
-
-  // $(document).click(function(e) {
-  //   var target = e.target;
-  //   if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
-  //     $('.dropdown').hide();
-  //   }
-  // });
 
   //Check to see if the window is top if not then display button
     $(window).scroll(function(){
@@ -178,8 +173,6 @@ $(function(){
       $('html, body').animate({scrollTop : 0},800);
       return false;
     });
-
-
 })
 
 

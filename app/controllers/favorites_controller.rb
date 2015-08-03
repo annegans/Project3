@@ -8,4 +8,15 @@ class FavoritesController <ApplicationController
   render :json => favorite
  end
 
+ def destroy
+  @favorite = Favorite.find(params[:id]).destroy
+
+   respond_to do |format|
+    format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
+    format.json { head :no_content }
+    end
+ end
+ 
 end
+
+
